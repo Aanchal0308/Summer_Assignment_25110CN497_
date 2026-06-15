@@ -1,3 +1,4 @@
+package Day1;
 //Program to print the sum of first N natural numbers:
 import java.util.Scanner;
 public class program1 {
