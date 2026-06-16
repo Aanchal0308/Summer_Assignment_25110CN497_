@@ -6,8 +6,17 @@ public class program64
 {
     public static void main(String[] args) {
         
-        int[] a = {0, 2, 8, 2, 0, 1, 0, 8};
-        int n = a.length;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number of elements in the array");
+        int n=sc.nextInt();
+        int [] a=new int[n];
+        
+        System.out.println("Enter the elements of the array");
+
+        for(int i=0;i<n;i++)
+        {
+            a[i]=sc.nextInt();
+        }
         
         
         boolean[] isDuplicate = new boolean[n];
