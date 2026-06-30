@@ -70,7 +70,7 @@ public class program114
                                 arr[i] = arr[i + 1];
                             }
                             currentSize--; 
-                            System.out.println("✅ Element deleted successfully.");
+                            System.out.println("Element deleted successfully.");
                         }
                     }
                     break;

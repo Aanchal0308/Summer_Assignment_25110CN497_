@@ -8,14 +8,14 @@ class Product
     int id;
     String name;
     int quantity;
-    double price;
+    double cost;
 
-    public Product(int id, String name, int quantity, double price) 
+    public Product(int id, String name, int quantity, double cost) 
     {
         this.id = id;
         this.name = name;
         this.quantity = quantity;
-        this.price = price;
+        this.cost = cost;
     }
 }
 
@@ -49,10 +49,10 @@ public class program116
                     String name = sc.nextLine();
                     System.out.print("Enter Initial Quantity: ");
                     int quantity = sc.nextInt();
-                    System.out.print("Enter Unit Price: ");
-                    double price = sc.nextDouble();
+                    System.out.print("Enter Unit cost: ");
+                    double cost = sc.nextDouble();
 
-                    inventory.add(new Product(id, name, quantity, price));
+                    inventory.add(new Product(id, name, quantity, cost));
                     System.out.println("Product added successfully!");
                     break;
 
@@ -64,11 +64,11 @@ public class program116
                     else 
                     {
                         System.out.println("\n-----------------------------------------------------");
-                        System.out.printf("%-10s %-20s %-10s %-10s\n", "ID", "Name", "Quantity", "Price");
+                        System.out.printf("%-10s %-20s %-10s %-10s\n", "ID", "Name", "Quantity", "cost");
                         System.out.println("-----------------------------------------------------");
                         for (Product p : inventory) 
                         {
-                            System.out.printf("%-10d %-20s %-10d $%-9.2f\n", p.id, p.name, p.quantity, p.price);
+                            System.out.printf("%-10d %-20s %-10d $%-9.2f\n", p.id, p.name, p.quantity, p.cost);
                         }
                         System.out.println("-----------------------------------------------------");
                     }
@@ -77,7 +77,7 @@ public class program116
                 case 3: 
                     System.out.print("Enter Product ID to update: ");
                     int searchId = sc.nextInt();
-                    boolean foundToUpdate = false;
+                    boolean updateNeed = false;
 
                     for (Product p : inventory) 
                     {
@@ -86,11 +86,11 @@ public class program116
                             System.out.print("Enter new quantity for " + p.name + ": ");
                             p.quantity = sc.nextInt();
                             System.out.println("Stock updated successfully!");
-                            foundToUpdate = true;
+                            updateNeed = true;
                             break;
                         }
                     }
-                    if (!foundToUpdate) 
+                    if (!updateNeed) 
                     {
                         System.out.println("Product ID not found.");
                     }

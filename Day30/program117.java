@@ -1,16 +1,16 @@
-package Day27;
+package Day30;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class program105 
+public class program117 
 {
     // Five simple lists to hold all student fields without needing any extra classes
-    private static ArrayList<Integer> studentIds = new ArrayList<>();
-    private static ArrayList<String> studentNames = new ArrayList<>();
-    private static ArrayList<Integer> studentAges = new ArrayList<>();
-    private static ArrayList<String> studentCourses = new ArrayList<>();
-    private static ArrayList<Double> studentGpas = new ArrayList<>();
+    private static ArrayList<Integer> sIds = new ArrayList<>();
+    private static ArrayList<String> sNames = new ArrayList<>();
+    private static ArrayList<Integer> sAges = new ArrayList<>();
+    private static ArrayList<String> sCourses = new ArrayList<>();
+    private static ArrayList<Double> sGpas = new ArrayList<>();
     
     private static Scanner sc = new Scanner(System.in);
 
@@ -57,7 +57,7 @@ public class program105
         sc.nextLine(); 
 
         
-        if(studentIds.contains(id))
+        if(sIds.contains(id))
         {
             System.out.println("Error: This ID " + id + " record already exists");
             return;
@@ -77,27 +77,27 @@ public class program105
         double gpa = sc.nextDouble();
         sc.nextLine(); 
 
-        studentIds.add(id);
-        studentNames.add(name);
-        studentAges.add(age);
-        studentCourses.add(course);
-        studentGpas.add(gpa);
+        sIds.add(id);
+        sNames.add(name);
+        sAges.add(age);
+        sCourses.add(course);
+        sGpas.add(gpa);
         
         System.out.println("Success: Student record added successfully!");
     }
 
     private static void viewStudents() {
-        if (studentIds.isEmpty()) {
+        if (sIds.isEmpty()) {
             System.out.println("No records found.");
             return;
         }
         System.out.println("\n--- All Student Records ---");
-        for (int i = 0; i < studentIds.size(); i++) {
-            System.out.println("ID: " + studentIds.get(i) + 
-                               " | Name: " + studentNames.get(i) + 
-                               " | Age: " + studentAges.get(i) + 
-                               " | Course: " + studentCourses.get(i) + 
-                               " | GPA: " + studentGpas.get(i));
+        for (int i = 0; i < sIds.size(); i++) {
+            System.out.println("ID: " + sIds.get(i) + 
+                               " | Name: " + sNames.get(i) + 
+                               " | Age: " + sAges.get(i) + 
+                               " | Course: " + sCourses.get(i) + 
+                               " | GPA: " + sGpas.get(i));
         }
     }
 
@@ -108,15 +108,15 @@ public class program105
         sc.nextLine(); 
 
         
-        int index = studentIds.indexOf(id);
+        int index = sIds.indexOf(id);
         if (index != -1) 
         {
             System.out.print("\n Record Found: ");
-            System.out.println("ID: " + studentIds.get(index) + 
-                               " | Name: " + studentNames.get(index) + 
-                               " | Age: " + studentAges.get(index) + 
-                               " | Course: " + studentCourses.get(index) + 
-                               " | GPA: " + studentGpas.get(index));
+            System.out.println("ID: " + sIds.get(index) + 
+                               " | Name: " + sNames.get(index) + 
+                               " | Age: " + sAges.get(index) + 
+                               " | Course: " + sCourses.get(index) + 
+                               " | GPA: " + sGpas.get(index));
             return;
         }
         System.out.println("Error: Student record with ID " + id + " not found.");
@@ -128,14 +128,14 @@ public class program105
         int id = sc.nextInt();
         sc.nextLine(); 
 
-        int index = studentIds.indexOf(id);
+        int index = sIds.indexOf(id);
         if (index != -1) 
         {
             System.out.print("Enter new name (or press enter to move forward): ");
             String name = sc.nextLine();
             if(!name.trim().isEmpty()) 
             {
-                studentNames.set(index, name);
+                sNames.set(index, name);
             }
 
             System.out.print("Enter new age (or press 0 to move forward): ");
@@ -143,14 +143,14 @@ public class program105
             sc.nextLine(); 
             if(age > 0) 
             {
-                studentAges.set(index, age);
+                sAges.set(index, age);
             }
 
             System.out.print("Enter new course (or press enter to move forward): ");
             String course = sc.nextLine();
             if(!course.trim().isEmpty()) 
             {
-                studentCourses.set(index, course);
+                sCourses.set(index, course);
             }
 
             System.out.print("Enter new GPA (or press -1 to move forward): ");
@@ -158,7 +158,7 @@ public class program105
             sc.nextLine(); 
             if(gpa >= 0) 
             {
-                studentGpas.set(index, gpa);
+                sGpas.set(index, gpa);
             }
 
             System.out.println("Success: Student record updated successfully!");
@@ -173,14 +173,14 @@ public class program105
         int id = sc.nextInt();
         sc.nextLine(); 
 
-        int index = studentIds.indexOf(id);
+        int index = sIds.indexOf(id);
         if (index != -1) 
         {
-            studentIds.remove(index);
-            studentNames.remove(index);
-            studentAges.remove(index);
-            studentCourses.remove(index);
-            studentGpas.remove(index);
+            sIds.remove(index);
+            sNames.remove(index);
+            sAges.remove(index);
+            sCourses.remove(index);
+            sGpas.remove(index);
             
             System.out.println("Success: Student record deleted safely.");
             return;
